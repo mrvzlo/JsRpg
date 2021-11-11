@@ -1,16 +1,18 @@
 <template>
-   <img alt="Vue logo" src="./assets/logo.png" />
-   <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+   <game />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import Game from './components/Game.vue';
+import SaveLoadService from '@/save-section/save-load.service';
 
 @Options({
    components: {
-      HelloWorld,
+      Game,
    },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+   saveLoadService = new SaveLoadService();
+}
 </script>
