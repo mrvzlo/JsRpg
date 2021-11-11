@@ -12,7 +12,8 @@ export default class SaveListService {
          const data = await saveService.load(name);
          return JSON.parse(data) as SaveInfoObject;
       };
-      return Promise.all(infoFiles.map(getSaveInfoByName));
+
+      return await Promise.all(infoFiles.map(getSaveInfoByName));
    }
 
    async deleteSave(name: string): Promise<void> {

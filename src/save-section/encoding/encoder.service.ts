@@ -1,5 +1,5 @@
 import LZUTF8 from 'lzutf8';
-import Saveable from '../saveable.interface';
+import Saveable from '../interfaces/saveable.interface';
 
 export default class EncoderService<T extends Saveable> {
    encode(src: T): string {
@@ -10,7 +10,7 @@ export default class EncoderService<T extends Saveable> {
    }
 
    private compress(src: T): string {
-      let json = JSON.stringify(src);
+      const json = JSON.stringify(src);
       if (!json) return '';
       return json;
    }
