@@ -3,8 +3,11 @@
 </style>
 
 <template>
-   <game v-if="gameState" :gamestate="gameState" />
-   <mainMenu v-else />
+   <div class="position-relative">
+      <game v-if="gameState" :gamestate="gameState" />
+      <mainMenu v-else />
+      <music :musicService="musicService" />
+   </div>
 </template>
 
 <script lang="ts">
@@ -14,15 +17,19 @@ import MainMenu from './components/menu/main-menu.vue';
 import Character from './components/models/characters/character';
 import GameState from './components/models/items/game-state';
 import Map from './components/models/map-objects/map';
+import Music from './components/settings/music.vue';
+import MusicService from './music/music.service';
 
 @Options({
    components: {
       Game,
       MainMenu,
+      Music,
    },
 })
 export default class App extends Vue {
    gameState: GameState | null = null;
+   musicService = new MusicService();
 
    newGame() {
       const map = new Map();
