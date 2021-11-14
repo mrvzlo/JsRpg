@@ -15,10 +15,9 @@ import { Options, Vue } from 'vue-class-component';
 import Game from './components/Game.vue';
 import MainMenu from './components/menu/main-menu.vue';
 import Character from './components/models/characters/character';
-import GameState from './components/models/items/game-state';
-import Map from './components/models/map-objects/map';
+import GameState from './components/models/game-state';
+import MusicService from './components/music/music.service';
 import Music from './components/settings/music.vue';
-import MusicService from './music/music.service';
 
 @Options({
    components: {
@@ -31,15 +30,14 @@ export default class App extends Vue {
    gameState: GameState | null = null;
    musicService = new MusicService();
 
-   newGame() {
-      const map = new Map();
-      const character = new Character();
-      const name = btoa(new Date().getTime().toString());
-      this.gameState = new GameState(map, character, name);
-   }
-
    exitGame() {
       this.gameState = null;
+   }
+
+   startCampaign(name: string) {
+      const saveName = btoa(new Date().getTime().toString());
+      this.gameState = new GameState(saveName);
+      this.gameState.loadCampaignName(name);
    }
 }
 </script>

@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { prop, Vue } from 'vue-class-component';
-import MusicService from '@/music/music.service';
+import MusicService from '../music/music.service';
 
 class Props {
    musicService: MusicService = prop({ required: true });

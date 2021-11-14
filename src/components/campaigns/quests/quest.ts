@@ -1,5 +1,5 @@
-import MapEvent from '../map/map-event';
-import TypedArray from '../shared/base/typed-array';
+import MapEvent from '../../map/map-event';
+import TypedArray from '../../shared/base/typed-array';
 import QuestStage from './quest-stage';
 import { QuestStatus } from './quest.status';
 
@@ -7,8 +7,6 @@ export default class Quest {
    id = 0;
    status = QuestStatus.NotStarted;
    stages = new TypedArray<QuestStage>(QuestStage);
-
-   constructor() {}
 
    getUpdates(): MapEvent[] {
       if (this.status !== QuestStatus.InProgress) return [];

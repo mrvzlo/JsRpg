@@ -5,7 +5,7 @@ export default class MusicService {
    }
 
    public setMenuMusic(): void {
-      this.musicAudio.src = require('@/music/menu/ambient.wav');
+      this.musicAudio.src = require('@/assets/music/ambient.wav');
    }
 
    public toggle() {

@@ -1,7 +1,15 @@
+body {
+   user-select: none;
+}
+
 .responsive-text {
    font-size: calc(0.5vw + 8px);
 }
 
 .bg-none {
    background: none;
+}
+
+.active {
+   background-color: rgba(255, 255, 255, 0.4);
 }

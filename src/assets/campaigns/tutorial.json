@@ -1,0 +1,29 @@
+{
+   "start": {
+      "x": 2,
+      "y": 2
+   },
+   "quests": [
+      {
+         "id": 1,
+         "stages": [
+            {
+               "id": 0,
+               "conditionTree": {
+                  "conditions": [
+                     {
+                        "type": 0
+                     }
+                  ]
+               },
+               "events": [
+                  {
+                     "type": 0,
+                     "args": ["Добро пожаловать в обучение"]
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
