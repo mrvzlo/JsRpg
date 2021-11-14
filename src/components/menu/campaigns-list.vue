@@ -28,16 +28,16 @@ export default class CampaignsList extends Vue {
    selected: number | null = null;
    campaigns: string[] = [];
 
-   created() {
+   created(): void {
       const service = new CampaignsListService();
       this.campaigns = service.getAllNames();
    }
 
-   select(index: number) {
+   select(index: number): void {
       this.selected = this.selected === index ? null : index;
    }
 
-   start() {
+   start(): void {
       const selectedName = this.campaigns[this.selected as number];
       (this.$root as any).startCampaign(selectedName);
    }

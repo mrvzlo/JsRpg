@@ -4,7 +4,7 @@
 
 <template>
    <div class="position-relative">
-      <game v-if="gameState" :gamestate="gameState" />
+      <game v-if="gameState" :gameState="gameState" />
       <mainMenu v-else />
       <music :musicService="musicService" />
    </div>
@@ -14,7 +14,6 @@
 import { Options, Vue } from 'vue-class-component';
 import Game from './components/Game.vue';
 import MainMenu from './components/menu/main-menu.vue';
-import Character from './components/models/characters/character';
 import GameState from './components/models/game-state';
 import MusicService from './components/music/music.service';
 import Music from './components/settings/music.vue';

@@ -20,10 +20,9 @@ export default class SaveLoadService<T extends Saveable> {
 
    private load(input: string): SaveLoadResponse<T> {
       const encoder = new EncoderService<T>();
-      const data = {} as T;
-      const response = new SaveLoadResponse(data, SaveLoadStatusType.Successful);
+      const response = new SaveLoadResponse({} as T, SaveLoadStatusType.Successful);
       try {
-         response.data = encoder.decode(input, data);
+         response.data = encoder.decode(input);
       } catch {
          response.status = SaveLoadStatusType.Unsuccessful;
       }

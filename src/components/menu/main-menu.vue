@@ -42,12 +42,12 @@ export default class MainMenu extends Vue {
       saveListService.getAllSaves().then((files) => (this.saveFiles = files));
    }
 
-   toggleSaves() {
+   toggleSaves(): void {
       this.showCampaigns = false;
       this.showSaves = !this.showSaves;
    }
 
-   toggleCampaigns() {
+   toggleCampaigns(): void {
       this.showSaves = false;
       this.showCampaigns = !this.showCampaigns;
    }

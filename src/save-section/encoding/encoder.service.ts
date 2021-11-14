@@ -15,31 +15,14 @@ export default class EncoderService<T extends Saveable> {
       return json;
    }
 
-   decode(src: string, defaultValue: T): T {
+   decode(src: string): T {
       const binary = LZUTF8.decodeStorageBinaryString(src);
       const string: any = LZUTF8.decodeUTF8(binary);
       const data = this.decompress(string);
-      const parsed = this.parse(data, defaultValue);
-      return parsed;
+      return data;
    }
 
    private decompress(src: string): T {
       return JSON.parse(src);
-   }
-
-   private parse(data: any, object: any): T {
-      if (typeof data !== 'object' || data === null) {
-         return data;
-      }
-
-      while (Array.isArray(data) && object.length < data.length) {
-         object.pushNew();
-      }
-
-      Object.keys(data).forEach((key) => {
-         if (key == 'ctor') return;
-         object[key] = this.parse(data[key], object[key]);
-      });
-      return object;
    }
 }

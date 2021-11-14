@@ -1,4 +1,4 @@
-import CampaignObject from './campaign.object';
+import CampaignInterface from './campaign.interface';
 
 export default class CampaignsListService {
    getAllNames(): string[] {
@@ -9,7 +9,7 @@ export default class CampaignsListService {
       return sentenceFormat;
    }
 
-   getByName(name: string): CampaignObject {
+   getByName(name: string): CampaignInterface {
       return require('@/assets/campaigns/' + name.toLocaleLowerCase() + '.json');
    }
 }

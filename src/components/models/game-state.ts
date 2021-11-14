@@ -1,14 +1,15 @@
 import Character from './characters/character';
-import Map from '../map/map';
 import Saveable from '@/save-section/interfaces/saveable.interface';
-import CampaignObject from '../campaigns/campaign.object';
-import TypedArray from '../shared/base/typed-array';
-import Quest from '../campaigns/quests/quest';
 import CampaignsListService from '../campaigns/campaigns-list.service';
+import MapEvent from '../map/map-event';
+import QuestInterface from '../campaigns/quests/quest.interface';
+import QuestService from '../campaigns/quests/quest.service';
+import CampaignInterface from '../campaigns/campaign.interface';
 
 export default class GameState implements Saveable {
+   questService = new QuestService();
    character = new Character();
-   quests = new TypedArray<Quest>(Quest);
+   quests: QuestInterface[] = [];
 
    constructor(public saveName: string) {}
 
@@ -21,9 +22,13 @@ export default class GameState implements Saveable {
       this.loadCampaignObject(obj);
    }
 
-   private loadCampaignObject(campaign: CampaignObject): void {
+   private loadCampaignObject(campaign: CampaignInterface): void {
       this.character.position = campaign.start;
-      Array.prototype.push.apply(this.quests, campaign.quests);
+      this.quests = campaign.quests;
       //map;
+   }
+
+   public getUpdates(): MapEvent[] {
+      return this.questService.getListUpdates(this.quests);
    }
 }

@@ -20,7 +20,7 @@ import { dateFormatter } from '../shared/formatters/date-formatter';
    props: { saveFiles: {} },
 })
 export default class SavesList extends Vue {
-   dateToStr(date: Date) {
+   dateToStr(date: Date): string {
       return dateFormatter(date);
    }
 }

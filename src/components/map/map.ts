@@ -1,4 +1,3 @@
-import MapEvent from './map-event';
-import { MapEventType } from './map-event.type';
+import MapInterface from './map.interface';
 
-export default class Map {}
+export default class Map implements MapInterface {}

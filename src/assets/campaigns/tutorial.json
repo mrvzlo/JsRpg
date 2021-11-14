@@ -6,9 +6,11 @@
    "quests": [
       {
          "id": 1,
+         "status": 1,
          "stages": [
             {
                "id": 0,
+               "status": 1,
                "conditionTree": {
                   "conditions": [
                      {
@@ -19,7 +21,7 @@
                "events": [
                   {
                      "type": 0,
-                     "args": ["Добро пожаловать в обучение"]
+                     "arguments": ["Добро пожаловать в обучение"]
                   }
                ]
             }
