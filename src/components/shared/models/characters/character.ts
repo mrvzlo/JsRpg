@@ -1,4 +1,4 @@
-import Point from '@/components/map/point';
+import Point from '@/components/shared/map/point';
 
 export default class Character {
    name = '';

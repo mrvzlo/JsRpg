@@ -13,8 +13,8 @@
 </template>
 
 <script lang="ts">
+import { dateFormatter } from '@/components/shared/formatters/date-formatter';
 import { Options, Vue } from 'vue-class-component';
-import { dateFormatter } from '../shared/formatters/date-formatter';
 
 @Options({
    props: { saveFiles: {} },

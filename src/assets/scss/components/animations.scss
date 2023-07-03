@@ -1,0 +1,26 @@
+.hide-up {
+   animation: flyUp 0.2s linear;
+   transform: translateY(-100%);
+}
+
+.show-up {
+   animation: flyDown 0.2s linear;
+}
+
+@keyframes flyUp {
+   0% {
+      transform: translateY(0);
+   }
+   100% {
+      transform: translateY(-100%);
+   }
+}
+
+@keyframes flyDown {
+   0% {
+      transform: translateY(-100%);
+   }
+   100% {
+      transform: translateY(0%);
+   }
+}

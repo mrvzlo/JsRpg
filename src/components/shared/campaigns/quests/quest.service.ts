@@ -1,4 +1,4 @@
-import MapEvent from '@/components/map/map-event';
+import MapEvent from '../../map/map-event';
 import ConditionTreeInterface from './conditions/condition-tree.interface';
 import MapConditionInterface from './conditions/map-condition.interface';
 import { MapConditionType } from './conditions/map-condition.type';

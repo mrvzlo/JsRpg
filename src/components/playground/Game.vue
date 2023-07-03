@@ -2,9 +2,12 @@
    <div class="position-relative h-100">
       <div class="d-flex">
          <div class="btn"></div>
-         <div class="flex-grow-1 text-center">{{ sceneText() }}</div>
+         <div class="flex-grow-1">
+            <div :class="'h5 text-center ' + (core.questInfo.shown ? 'show-up' : 'hide-up')">{{ core.questInfo.text }}</div>
+         </div>
          <button class="btn btn-danger" v-on:click="exit">X</button>
       </div>
+      <canvas> </canvas>
       <fight />
    </div>
 </template>
@@ -13,7 +16,7 @@
 import { Options, prop, Vue } from 'vue-class-component';
 import Core from './core';
 import Fight from './fight/fight.vue';
-import GameState from './models/game-state';
+import GameState from './shared/game-state';
 
 class Props {
    gameState: GameState = prop({ required: true });
@@ -45,10 +48,6 @@ export default class Game extends Vue.with(Props) {
    checkQuests(): void {
       const questUpdates = this.gameState.getUpdates();
       this.core.applyEvents(questUpdates);
-   }
-
-   sceneText(): string {
-      return this.core.scene.shown ? this.core.scene.text : '';
    }
 }
 </script>

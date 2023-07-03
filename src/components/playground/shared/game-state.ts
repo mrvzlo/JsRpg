@@ -1,10 +1,10 @@
-import Character from './characters/character';
+import Character from '../../shared/models/characters/character';
 import Saveable from '@/save-section/interfaces/saveable.interface';
-import CampaignsListService from '../campaigns/campaigns-list.service';
-import MapEvent from '../map/map-event';
-import QuestInterface from '../campaigns/quests/quest.interface';
-import QuestService from '../campaigns/quests/quest.service';
-import CampaignInterface from '../campaigns/campaign.interface';
+import CampaignsListService from '../../shared/campaigns/campaigns-list.service';
+import QuestInterface from '../../shared/campaigns/quests/quest.interface';
+import QuestService from '../../shared/campaigns/quests/quest.service';
+import CampaignInterface from '../../shared/campaigns/campaign.interface';
+import MapEvent from '@/components/shared/map/map-event';
 
 export default class GameState implements Saveable {
    questService = new QuestService();

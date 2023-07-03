@@ -1,5 +1,5 @@
-import Point from '../map/point';
-import MapInterface from '../map/map.interface';
+import Point from '../shared/map/point';
+import MapInterface from '../shared/map/map.interface';
 import QuestInterface from './quests/quest.interface';
 
 export default interface CampaignInterface {

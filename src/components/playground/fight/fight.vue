@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
+import Character from '@/components/shared/models/characters/character';
 import { Options, Vue } from 'vue-class-component';
-import Character from '../models/characters/character';
 
 @Options({
    props: { character: Character },

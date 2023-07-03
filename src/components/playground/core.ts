@@ -1,9 +1,9 @@
-import MapEvent from './map/map-event';
-import { MapEventType } from './map/map-event.type';
-import Scene from './scene/scene';
+import MapEvent from '../shared/map/map-event';
+import { MapEventType } from '../shared/map/map-event.type';
+import Scene from '../shared/scene/scene';
 
 export default class Core {
-   scene = new Scene();
+   questInfo = new Scene();
 
    public applyEvents(list: MapEvent[]): void {
       list.forEach((x) => this.applyEvent(x));
@@ -12,7 +12,7 @@ export default class Core {
    private applyEvent(event: MapEvent): void {
       switch (event.type) {
          case MapEventType.Message:
-            return this.scene.show(event.arguments[0]);
+            return this.questInfo.show(event.arguments[0], 2000);
       }
    }
 }

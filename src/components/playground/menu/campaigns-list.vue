@@ -18,8 +18,8 @@
 </template>
 
 <script lang="ts">
+import CampaignsListService from '@/components/shared/campaigns/campaigns-list.service';
 import { Options, Vue } from 'vue-class-component';
-import CampaignsListService from '../campaigns/campaigns-list.service';
 
 @Options({
    props: { saveFiles: {} },
