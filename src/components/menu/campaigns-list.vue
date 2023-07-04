@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import CampaignsListService from '@/components/shared/campaigns/campaigns-list.service';
+import CampaignsListService from '../shared/campaigns/campaigns-list.service';
 import { Options, Vue } from 'vue-class-component';
 
 @Options({

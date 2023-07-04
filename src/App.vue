@@ -3,33 +3,37 @@
 </style>
 
 <template>
-   <div class="position-relative">
+   <div class="position-relative h-100">
       <game v-if="gameState" :gameState="gameState" />
+      <mapGen v-else-if="isMapGenMode" />
       <mainMenu v-else />
-      <music :musicService="musicService" />
+      <music v-if="!isMapGenMode" :musicService="musicService" />
    </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import Game from './components/playground/Game.vue';
-import MainMenu from './components/playground/menu/main-menu.vue';
+import MainMenu from './components/menu/main-menu.vue';
 import Music from './components/playground/settings/music.vue';
 import ControlService from '@/controls/control-service';
 import MusicService from './components/playground/music/music.service';
 import { ActiveDialog } from './components/shared/models/session/active-dialog.type';
 import SessionState from './components/shared/models/session/session-state';
 import GameState from './components/playground/shared/game-state';
+import MapGen from './components/mapgen/map-gen.vue';
 
 @Options({
    components: {
       Game,
       MainMenu,
       Music,
+      MapGen,
    },
 })
 export default class App extends Vue {
    gameState: GameState | null = null;
+   isMapGenMode = false;
    sessionState = new SessionState();
    musicService = new MusicService();
 
@@ -53,6 +57,9 @@ export default class App extends Vue {
       document.onkeydown = (e) => controlService.processKeyDown(e, this.sessionState);
       document.onkeyup = (e) => controlService.processKeyUp(e, this.sessionState);
    }
+
+   openMapGen() {
+      this.isMapGenMode = true;
+   }
 }
 </script>
-./components/playground/music/music.service

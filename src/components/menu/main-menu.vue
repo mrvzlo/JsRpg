@@ -7,11 +7,17 @@
             <campaigns-list v-if="showCampaigns" />
          </div>
          <div class="col-3 responsive-text d-flex flex-column justify-content-center text-end">
-            <div class="h5 mb-5 d-inline-block">
-               <div class="btn btn-primary d-inline-flex m-2" v-on:click="toggleCampaigns()">{{ $t('menu.new_game') }}</div>
+            <div class="h5 mb-5">
+               <button class="btn btn-primary d-inline-flex m-2" v-on:click="toggleCampaigns()">
+                  {{ $t('menu.new_game') }}
+               </button>
                <br />
                <button class="btn btn-primary d-inline-flex m-2" v-on:click="toggleSaves()" :disabled="!saveFiles">
                   {{ $t('menu.load_game') }}
+               </button>
+               <br />
+               <button class="btn btn-primary d-inline-flex m-2" v-on:click="openMapGen()">
+                  {{ $t('menu.map_editor') }}
                </button>
             </div>
          </div>
@@ -50,6 +56,10 @@ export default class MainMenu extends Vue {
    toggleCampaigns(): void {
       this.showSaves = false;
       this.showCampaigns = !this.showCampaigns;
+   }
+
+   openMapGen(): void {
+      (this.$root as any).openMapGen();
    }
 }
 </script>
