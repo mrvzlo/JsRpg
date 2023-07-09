@@ -7,7 +7,7 @@ import Character from '@/components/shared/models/characters/character';
 import { Options, Vue } from 'vue-class-component';
 
 @Options({
-   props: { character: Character },
+   props: { character: {} },
 })
 export default class Fight extends Vue {}
 </script>

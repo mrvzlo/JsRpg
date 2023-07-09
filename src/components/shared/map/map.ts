@@ -1,3 +1,5 @@
-import MapInterface from './map.interface';
+import { TerrainType } from './terrain.type';
 
-export default class Map implements MapInterface {}
+export default interface Map {
+   terrain: TerrainType[][];
+}

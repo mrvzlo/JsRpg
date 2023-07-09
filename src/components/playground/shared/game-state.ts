@@ -8,7 +8,7 @@ import MapEvent from '@/components/shared/map/map-event';
 
 export default class GameState implements Saveable {
    questService = new QuestService();
-   character = new Character();
+   character!: Character;
    quests: QuestInterface[] = [];
 
    constructor(public saveName: string) {}

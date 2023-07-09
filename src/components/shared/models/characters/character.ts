@@ -1,6 +1,6 @@
 import Point from '@/components/shared/map/point';
 
-export default class Character {
-   name = '';
-   position!: Point;
+export default interface Character extends Point {
+   name: string;
+   position: Point;
 }

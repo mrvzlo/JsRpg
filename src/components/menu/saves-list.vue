@@ -17,7 +17,7 @@ import { dateFormatter } from '@/components/shared/formatters/date-formatter';
 import { Options, Vue } from 'vue-class-component';
 
 @Options({
-   props: { saveFiles: {} },
+   props: { saveFiles: [] },
 })
 export default class SavesList extends Vue {
    dateToStr(date: Date): string {

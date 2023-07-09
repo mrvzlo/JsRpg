@@ -1,3 +1,17 @@
 .btn {
    font-size: inherit;
 }
+
+.cursor-pointer {
+   cursor: pointer;
+}
+
+img.active {
+   outline: solid 6px #fff8;
+   outline-offset: -6px;
+}
+
+.hover-block {
+   outline: solid 3px #fff8;
+   outline-offset: -3px;
+}
